@@ -8,6 +8,12 @@ class inventarioController{
     function __construct(){
         $this -> inventarioModel = new inventarioModel();
     }
+    public static function index() {
+        echo "Bienvenido al módulo de inventario.";
+        
+        // O si tienes una vista para mostrar:
+        // require_once('vista/inventario/inicio.php');
+    }
     public static function inventario(){
         $consultaInventario = new inventarioModel();
         $datos = $consultaInventario -> mostrarInventario();
@@ -69,6 +75,10 @@ class inventarioController{
         header("Location: index.php?e=inventario");
         exit();
 
+    }
+
+    public static function att(){
+        require_once('vista/clienteV/attCliente.php');
     }
 
 }

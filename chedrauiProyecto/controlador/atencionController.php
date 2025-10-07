@@ -1,20 +1,22 @@
 <?php
-require_once('modelo/promocionalModel.php');
-require_once('modelo/logoModel.php');
 
-class promocionalController{
+require_once('modelo/atencionModel.php');
 
-    private $promocionalController;
+
+class atencionController{
+
+    private $atencionController;
 
     function __construct(){
-        $this -> promocionalModel = new promocionalModel();
+        $this -> atencionModel = new atencionModel();
     }
-    public static function vistaCli(){
-        $consultaLogo = new logoModel();
-        $datosLogo = $consultaLogo -> mostrarLogo();
-        $consultaPromo = new promocionalModel();
-        $datos = $consultaPromo -> mostrarPromo();
-        require_once('vista/clienteV/vistaPC.php');
+
+
+
+    public static function aC(){
+        $consultatencion = new atencionModel();
+        $datos = $consultatencion -> atencion();
+        require_once('vista/clienteV/attCliente.php');
     }
 
     public static function agregarImagen(){
@@ -46,7 +48,5 @@ class promocionalController{
         $insert-> insertarLo($rutaDestino1);
         header("location:".urlsite."index.php?p=vistaCli");
     }
-
-
 }
 ?>

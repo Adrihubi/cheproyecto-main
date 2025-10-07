@@ -59,6 +59,5 @@ class inventarioModel{
         $stmt = $db->prepare($sql);
         $stmt->execute([$id]);
     }
-
 }
 ?>
